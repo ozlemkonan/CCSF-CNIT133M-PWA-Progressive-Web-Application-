@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Example of simple PWA for CNIT133m">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#FFB266"/>
+        <title>PWA</title>
+        <script>
+            window.addEventListener('error', function(error) {
+                if (ChromeSamples && ChromeSamples.setStatus) {
+                    console.error(error);
+                    ChromeSamples.setStatus(error.message + ' (Sorry, your browser may not support this feature.)');
+                    error.preventDefault();
+                }
+            });
+        </script>
+        <link rel="apple-touch-icon" href="/images/hello-icon-192.png">
+        <link rel="manifest" crossorigin="use-credentials" href="manifest.json">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body id="content">
+        <div id="descrip">
+            
+            <h1>PWA (Progressive Web Application)</h1>
+                <p>Progressive Web App (PWA) is a term used to denote a new software development methodology. Unlike traditional applications, progressive web apps are a hybrid of regular web pages (or websites) and a mobile application. This new application model attempts to combine features offered by most modern browsers with the benefits of mobile experience.</p>
+                <h2>Characteristics of a PWA</h2>
+                   <p><span style="color:navy;"><strong>Progressive:</strong></span> By definition, a progressive web app must work on any device and enhance progressively, taking advantage of any features available on the user’s device and browser.</p>
+                   <p><span style="color:navy;"><strong>Discoverable:</strong></span> Because a progressive web app is a website, it should be discoverable in search engines. This is a major advantage over native applications, which still lag behind websites in searchability.</p>
+                   <p><span style="color:navy;"><strong>Fast:</strong></span>according to some studies, 53% of users will abandon a site that takes longer than 3 seconds to load! And even when the application/site is loaded, the users expect them to be fast with no slow-to-respond interfaces.</p>
+                   <p><span style="color:navy;"><strong>Linkable:</strong></span>As another characteristic inherited from websites, a well-designed website should use the URI to indicate the current state of the application. This will enable the web app to retain or reload its state when the user bookmarks or shares the app’s URL.</p>
+                   <p><span style="color:navy;"><strong>Responsive:</strong></span> A progressive web app’s UI must fit the device’s form factor and screen size.</p>
+                   <p><span style="color:navy;"><strong>Installable:</strong></span> A progressive web app can be installed on the device’s home screen, making it readily available.</p>
+                   <p><span style="color:navy;"><strong>Reliable:</strong></span>it means that when the app is launched, the PWA will load instantly, regardless of the network state – we previously saw the using of Service Workers, written in JavaScript that will pre-cache key resources of the application thus eliminating the dependence on the network and making sure that the user will have an instant and reliable experience.</p>
+                   <p><span style="color:navy;"><strong>Re-engageable:</strong></span>Mobile app users are more likely to reuse their apps, and progressive web apps are intended to achieve the same goals through features such as push notifications.</p>
+
+          <p>Select for changing background</p>
+           
+            <p>
+                <select id="p-pic" onchange="changeBack();">
+                    <option id="backwhite" value="default">Change Background</option>
+                    <option id="bluetwinkles" value="twinkleblue">Twinkly Blue</option>
+                    <option id="goldsparkles" value="sparklegold">Gold Sparkles</option>
+                </select>
+            </p>
+        </div>
+        <script>
+            if ("serviceWorker"in navigator) {
+                navigator.serviceWorker.register("service-worker.js");
+            }
+            var selection = document.getElementById("p-pic");
+            function changeBack() {
+                var choice = selection.options[selection.selectedIndex];
+                if (choice.value == "default") {
+                    document.body.style.backgroundImage = "none";
+                }
+                if (choice.value == "twinkleblue") {
+                    document.body.style.backgroundImage = "url('images/lightblue.jpg')";
+                }
+                if (choice.value == "sparklegold") {
+                    document.body.style.backgroundImage = "url('images/lightgold.jpg')";
+                }
+            }
+            ;
+        </script>
+
+</body>
+</html>

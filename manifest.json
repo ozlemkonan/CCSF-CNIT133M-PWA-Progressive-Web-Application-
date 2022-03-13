@@ -1,0 +1,16 @@
+{ 
+    "background_color": "#fff",
+    "theme_color": "#FFB266",
+    "description": "Provides simple example of a progressive web app (PWA) for homework 4, CNIT 133m.",
+    "display": "minimal-ui",
+    "orientation": "any",
+    "icons": [ 
+        { "src": "images/hello-icon-128.png", "type": "image/png", "sizes": "128x128", "purpose": "any maskable" }, 
+        { "src": "images/hello-icon-144.png", "type": "image/png", "sizes": "144x144", "purpose": "any maskable" }, 
+        { "src": "images/hello-icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any maskable" },
+        { "src": "images/hello-icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable" } 
+        ], 
+    "start_url": "https://hills.ccsf.edu/~okonan/hw4/index.html",
+    "short_name": "PWA", 
+    "name": "Progressive Web Application 2020"
+}

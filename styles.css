@@ -1,0 +1,27 @@
+body { 
+    font-family: Helvetica,Arial,Verdana serif; 
+    background-color: #fff;
+}
+
+h1 {text-align: center;}
+h1,h2{ 
+    color:navy;
+}
+
+body#content {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#descrip {width: 90%;
+         margin:0 auto}
+
+#p-pic {border: 2px solid navy;
+        border-radius: 15px;
+        padding: 10px;
+        color: navy;
+        font-weight: bold;
+        }
+
+  
